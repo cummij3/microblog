@@ -1,4 +1,4 @@
-2020-05-17 12:21:28,217 ERROR: Exception on / [GET] [in c:\users\jcumm\documents\12-microblog\microblog\venv\lib\site-packages\flask\app.py:1892]
+2020-05-17 12:06:16,556 ERROR: Exception on / [GET] [in c:\users\jcumm\documents\12-microblog\microblog\venv\lib\site-packages\flask\app.py:1892]
 Traceback (most recent call last):
   File "c:\users\jcumm\documents\12-microblog\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1248, in _execute_context
     cursor, statement, parameters, context
@@ -71,28 +71,4 @@ FROM user
 WHERE user.id = ?]
 [parameters: (6,)]
 (Background on this error at: http://sqlalche.me/e/e3q8)
-2020-05-17 12:29:00,105 INFO: Microblog startup [in C:\Users\jcumm\Documents\12-microblog\microblog\app\__init__.py:45]
-2020-05-17 12:29:08,701 INFO: Microblog startup [in C:\Users\jcumm\Documents\12-microblog\microblog\app\__init__.py:45]
-2020-05-17 12:29:36,576 INFO: Microblog startup [in C:\Users\jcumm\Documents\12-microblog\microblog\app\__init__.py:45]
-2020-05-17 12:30:00,172 INFO: Microblog startup [in C:\Users\jcumm\Documents\12-microblog\microblog\app\__init__.py:45]
-2020-05-17 12:30:06,185 INFO: Microblog startup [in C:\Users\jcumm\Documents\12-microblog\microblog\app\__init__.py:45]
-2020-05-17 12:32:34,741 ERROR: Exception on /follow/user2 [GET] [in c:\users\jcumm\documents\12-microblog\microblog\venv\lib\site-packages\flask\app.py:1892]
-Traceback (most recent call last):
-  File "c:\users\jcumm\documents\12-microblog\microblog\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
-    response = self.full_dispatch_request()
-  File "c:\users\jcumm\documents\12-microblog\microblog\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "c:\users\jcumm\documents\12-microblog\microblog\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "c:\users\jcumm\documents\12-microblog\microblog\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
-    raise value
-  File "c:\users\jcumm\documents\12-microblog\microblog\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "c:\users\jcumm\documents\12-microblog\microblog\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "c:\users\jcumm\documents\12-microblog\microblog\venv\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
-    return func(*args, **kwargs)
-  File "C:\Users\jcumm\Documents\12-microblog\microblog\app\routes.py", line 103, in follow
-    db.seesion.commit()
-AttributeError: 'SQLAlchemy' object has no attribute 'seesion'
-2020-05-17 12:33:22,101 INFO: Microblog startup [in C:\Users\jcumm\Documents\12-microblog\microblog\app\__init__.py:45]
+2020-05-17 12:07:30,341 INFO: Microblog startup [in C:\Users\jcumm\Documents\12-microblog\microblog\app\__init__.py:45]
