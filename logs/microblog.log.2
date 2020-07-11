@@ -1,13 +1,4 @@
-2020-05-17 12:17:07,214 ERROR: Exception on / [GET] [in c:\users\jcumm\documents\12-microblog\microblog\venv\lib\site-packages\flask\app.py:1892]
-Traceback (most recent call last):
-  File "c:\users\jcumm\documents\12-microblog\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1248, in _execute_context
-    cursor, statement, parameters, context
-  File "c:\users\jcumm\documents\12-microblog\microblog\venv\lib\site-packages\sqlalchemy\engine\default.py", line 590, in do_execute
-    cursor.execute(statement, parameters)
-sqlite3.OperationalError: no such table: user
-
-The above exception was the direct cause of the following exception:
-
+2020-05-17 17:12:31,593 ERROR: Exception on /index [GET] [in c:\users\jcumm\documents\12-microblog\microblog\venv\lib\site-packages\flask\app.py:1892]
 Traceback (most recent call last):
   File "c:\users\jcumm\documents\12-microblog\microblog\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
@@ -17,58 +8,100 @@ Traceback (most recent call last):
     reraise(exc_type, exc_value, tb)
   File "c:\users\jcumm\documents\12-microblog\microblog\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
     raise value
-  File "c:\users\jcumm\documents\12-microblog\microblog\venv\lib\site-packages\flask\app.py", line 1948, in full_dispatch_request
-    rv = self.preprocess_request()
-  File "c:\users\jcumm\documents\12-microblog\microblog\venv\lib\site-packages\flask\app.py", line 2242, in preprocess_request
-    rv = func()
-  File "C:\Users\jcumm\Documents\12-microblog\microblog\app\routes.py", line 73, in before_request
-    if current_user.is_authenticated:
-  File "c:\users\jcumm\documents\12-microblog\microblog\venv\lib\site-packages\werkzeug\local.py", line 347, in __getattr__
-    return getattr(self._get_current_object(), name)
-  File "c:\users\jcumm\documents\12-microblog\microblog\venv\lib\site-packages\werkzeug\local.py", line 306, in _get_current_object
-    return self.__local()
-  File "c:\users\jcumm\documents\12-microblog\microblog\venv\lib\site-packages\flask_login\utils.py", line 26, in <lambda>
-    current_user = LocalProxy(lambda: _get_user())
-  File "c:\users\jcumm\documents\12-microblog\microblog\venv\lib\site-packages\flask_login\utils.py", line 346, in _get_user
-    current_app.login_manager._load_user()
-  File "c:\users\jcumm\documents\12-microblog\microblog\venv\lib\site-packages\flask_login\login_manager.py", line 318, in _load_user
-    user = self._user_callback(user_id)
-  File "C:\Users\jcumm\Documents\12-microblog\microblog\app\models.py", line 64, in load_user
-    return User.query.get(int(id))
-  File "c:\users\jcumm\documents\12-microblog\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 1004, in get
-    return self._get_impl(ident, loading.load_on_pk_identity)
-  File "c:\users\jcumm\documents\12-microblog\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 1121, in _get_impl
-    return db_load_fn(self, primary_key_identity)
-  File "c:\users\jcumm\documents\12-microblog\microblog\venv\lib\site-packages\sqlalchemy\orm\loading.py", line 287, in load_on_pk_identity
-    return q.one()
-  File "c:\users\jcumm\documents\12-microblog\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 3360, in one
-    ret = self.one_or_none()
-  File "c:\users\jcumm\documents\12-microblog\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 3329, in one_or_none
-    ret = list(self)
-  File "c:\users\jcumm\documents\12-microblog\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 3405, in __iter__
-    return self._execute_and_instances(context)
-  File "c:\users\jcumm\documents\12-microblog\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 3430, in _execute_and_instances
-    result = conn.execute(querycontext.statement, self._params)
-  File "c:\users\jcumm\documents\12-microblog\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 984, in execute
-    return meth(self, multiparams, params)
-  File "c:\users\jcumm\documents\12-microblog\microblog\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 293, in _execute_on_connection
-    return connection._execute_clauseelement(self, multiparams, params)
-  File "c:\users\jcumm\documents\12-microblog\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1103, in _execute_clauseelement
-    distilled_params,
-  File "c:\users\jcumm\documents\12-microblog\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1288, in _execute_context
-    e, statement, parameters, cursor, context
-  File "c:\users\jcumm\documents\12-microblog\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1482, in _handle_dbapi_exception
-    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
-  File "c:\users\jcumm\documents\12-microblog\microblog\venv\lib\site-packages\sqlalchemy\util\compat.py", line 178, in raise_
-    raise exception
-  File "c:\users\jcumm\documents\12-microblog\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1248, in _execute_context
-    cursor, statement, parameters, context
-  File "c:\users\jcumm\documents\12-microblog\microblog\venv\lib\site-packages\sqlalchemy\engine\default.py", line 590, in do_execute
-    cursor.execute(statement, parameters)
-sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: user
-[SQL: SELECT user.id AS user_id, user.username AS user_username, user.email AS user_email, user.password_hash AS user_password_hash, user.about_me AS user_about_me, user.last_seen AS user_last_seen 
-FROM user 
-WHERE user.id = ?]
-[parameters: (6,)]
-(Background on this error at: http://sqlalche.me/e/e3q8)
-2020-05-17 12:21:23,473 INFO: Microblog startup [in C:\Users\jcumm\Documents\12-microblog\microblog\app\__init__.py:45]
+  File "c:\users\jcumm\documents\12-microblog\microblog\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\jcumm\documents\12-microblog\microblog\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\users\jcumm\documents\12-microblog\microblog\venv\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\jcumm\Documents\12-microblog\microblog\app\routes.py", line 23, in index
+    return render_template('index.html', title="Home Page", form=form, posts=posts)
+  File "c:\users\jcumm\documents\12-microblog\microblog\venv\lib\site-packages\flask\templating.py", line 138, in render_template
+    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "c:\users\jcumm\documents\12-microblog\microblog\venv\lib\site-packages\jinja2\environment.py", line 930, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "c:\users\jcumm\documents\12-microblog\microblog\venv\lib\site-packages\jinja2\environment.py", line 883, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "c:\users\jcumm\documents\12-microblog\microblog\venv\lib\site-packages\jinja2\environment.py", line 857, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "c:\users\jcumm\documents\12-microblog\microblog\venv\lib\site-packages\jinja2\loaders.py", line 127, in load
+    code = environment.compile(source, name, filename)
+  File "c:\users\jcumm\documents\12-microblog\microblog\venv\lib\site-packages\jinja2\environment.py", line 638, in compile
+    self.handle_exception(source=source_hint)
+  File "c:\users\jcumm\documents\12-microblog\microblog\venv\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "c:\users\jcumm\documents\12-microblog\microblog\venv\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\jcumm\Documents\12-microblog\microblog\app\templates\index.html", line 25, in template
+    {% endfor %}
+jinja2.exceptions.TemplateSyntaxError: Encountered unknown tag 'endfor'. Jinja was looking for the following tags: 'endblock'. The innermost block that needs to be closed is 'block'.
+2020-05-17 17:13:44,694 INFO: Microblog startup [in C:\Users\jcumm\Documents\12-microblog\microblog\app\__init__.py:45]
+2020-05-17 17:17:40,639 INFO: Microblog startup [in C:\Users\jcumm\Documents\12-microblog\microblog\app\__init__.py:45]
+2020-05-17 17:29:12,245 INFO: Microblog startup [in C:\Users\jcumm\Documents\12-microblog\microblog\app\__init__.py:45]
+2020-05-17 17:41:06,827 INFO: Microblog startup [in C:\Users\jcumm\Documents\12-microblog\microblog\app\__init__.py:45]
+2020-05-17 17:51:34,701 INFO: Microblog startup [in C:\Users\jcumm\Documents\12-microblog\microblog\app\__init__.py:45]
+2020-05-17 17:58:23,341 INFO: Microblog startup [in C:\Users\jcumm\Documents\12-microblog\microblog\app\__init__.py:45]
+2020-07-11 08:08:48,694 INFO: Microblog startup [in C:\Users\jcumm\Documents\12-microblog\microblog\app\__init__.py:47]
+2020-07-11 08:10:57,836 INFO: Microblog startup [in C:\Users\jcumm\Documents\12-microblog\microblog\app\__init__.py:47]
+2020-07-11 08:20:00,768 INFO: Microblog startup [in C:\Users\jcumm\Documents\12-microblog\microblog\app\__init__.py:47]
+2020-07-11 08:27:09,658 INFO: Microblog startup [in C:\Users\jcumm\Documents\12-microblog\microblog\app\__init__.py:47]
+2020-07-11 08:27:48,625 INFO: Microblog startup [in C:\Users\jcumm\Documents\12-microblog\microblog\app\__init__.py:47]
+2020-07-11 08:32:00,274 INFO: Microblog startup [in C:\Users\jcumm\Documents\12-microblog\microblog\app\__init__.py:47]
+2020-07-11 10:17:31,803 INFO: Microblog startup [in C:\Users\jcumm\Documents\12-microblog\microblog\app\__init__.py:47]
+2020-07-11 10:18:15,256 INFO: Microblog startup [in C:\Users\jcumm\Documents\12-microblog\microblog\app\__init__.py:47]
+2020-07-11 10:18:39,813 INFO: Microblog startup [in C:\Users\jcumm\Documents\12-microblog\microblog\app\__init__.py:47]
+2020-07-11 10:19:08,982 INFO: Microblog startup [in C:\Users\jcumm\Documents\12-microblog\microblog\app\__init__.py:47]
+2020-07-11 10:19:30,070 ERROR: Exception on /reset_password_request [GET] [in c:\users\jcumm\documents\12-microblog\microblog\venv\lib\site-packages\flask\app.py:1892]
+Traceback (most recent call last):
+  File "c:\users\jcumm\documents\12-microblog\microblog\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\jcumm\documents\12-microblog\microblog\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\jcumm\documents\12-microblog\microblog\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\jcumm\documents\12-microblog\microblog\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\jcumm\documents\12-microblog\microblog\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\jcumm\documents\12-microblog\microblog\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\jcumm\Documents\12-microblog\microblog\app\routes.py", line 96, in reset_password_request
+    return render_template('reset_password_request.html', title='Resset Password', form=form)
+  File "c:\users\jcumm\documents\12-microblog\microblog\venv\lib\site-packages\flask\templating.py", line 140, in render_template
+    ctx.app,
+  File "c:\users\jcumm\documents\12-microblog\microblog\venv\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "c:\users\jcumm\documents\12-microblog\microblog\venv\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "c:\users\jcumm\documents\12-microblog\microblog\venv\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "c:\users\jcumm\documents\12-microblog\microblog\venv\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Users\jcumm\Documents\12-microblog\microblog\app\templates\reset_password_request.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "C:\Users\jcumm\Documents\12-microblog\microblog\app\templates\base.html", line 31, in top-level template code
+    {% block content %}{% endblock %}
+  File "C:\Users\jcumm\Documents\12-microblog\microblog\app\templates\reset_password_request.html", line 9, in block "content"
+    {{ from.email(size=64) }}<br>
+  File "c:\users\jcumm\documents\12-microblog\microblog\venv\lib\site-packages\jinja2\environment.py", line 471, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'from' is undefined
+2020-07-11 10:21:19,890 INFO: Microblog startup [in C:\Users\jcumm\Documents\12-microblog\microblog\app\__init__.py:47]
+2020-07-11 10:23:05,668 ERROR: Exception on /reset_password_request [POST] [in c:\users\jcumm\documents\12-microblog\microblog\venv\lib\site-packages\flask\app.py:1892]
+Traceback (most recent call last):
+  File "c:\users\jcumm\documents\12-microblog\microblog\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\jcumm\documents\12-microblog\microblog\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\jcumm\documents\12-microblog\microblog\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\jcumm\documents\12-microblog\microblog\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\jcumm\documents\12-microblog\microblog\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\jcumm\documents\12-microblog\microblog\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:\Users\jcumm\Documents\12-microblog\microblog\app\routes.py", line 93, in reset_password_request
+    send_passord_reset_email(user)
+NameError: name 'send_passord_reset_email' is not defined
+2020-07-11 10:23:39,223 INFO: Microblog startup [in C:\Users\jcumm\Documents\12-microblog\microblog\app\__init__.py:47]
